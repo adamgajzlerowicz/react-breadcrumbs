@@ -2,6 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { store } from "./state/store";
+import { Provider } from 'react-redux';
 
 // Import Components
 import App from './app.jsx';
@@ -11,9 +13,11 @@ import CrumbRoute from './crumb-route.jsx';
 let element = document.getElementById('app'),
 	render = Root => {
 		ReactDOM.render((
-			<BrowserRouter>
-				<CrumbRoute title="Home" path="/" component={ Root } />
-			</BrowserRouter>
+			<Provider store={store}>
+                <BrowserRouter>
+                    <CrumbRoute title="Home" path="/" component={ Root } />
+                </BrowserRouter>
+			</Provider>
 		), element);
 	}
 

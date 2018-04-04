@@ -1,9 +1,10 @@
 // Import External Dependencies
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React from 'react'
+import { Route } from 'react-router-dom'
 
 // Import Components
-import { Breadcrumb } from '../../src/index.js';
+import { ConnectedBreadcrumb as Breadcrumb } from '../../src/index'
+
 
 // Create and export the component
 export default ({
@@ -14,11 +15,11 @@ export default ({
 }) => (
   <Route { ...props } render={ routeProps => (
     <Breadcrumb data={{
-    	title: props.title,
-    	pathname: routeProps.match.url,
-    	search: includeSearch ? routeProps.location.search : null
+        title: props.title,
+        pathname: routeProps.match.url,
+        search: includeSearch ? routeProps.location.search : null
     }}>
-    	{ Component ? <Component { ...routeProps } /> : render(routeProps) }
+        { Component ? <Component { ...routeProps } /> : render(routeProps) }
     </Breadcrumb>
   )} />
 )

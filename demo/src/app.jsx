@@ -1,20 +1,20 @@
 // Import External Dependencies
 import React from 'react';
-import { Switch, NavLink, Route } from 'react-router-dom';
+import { Switch, NavLink, Route } from 'react-router-dom'
 
 // Import Components
-import { Breadcrumbs } from '../../src/index.js';
+import { ConnectedBreadcrumbs as Breadcrumbs } from '../../src/index.js'
 import CrumbRoute from './crumb-route.jsx'
 import Friends from './friends.jsx'
 import Events from './events.jsx'
 import Locations from './locations.jsx'
 
 // Load Styling
-import '../../src/style.css';
-import './app.css';
+import '../../src/style.css'
+import './app.css'
 
 // Create and export the component
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div className="demo">
@@ -42,3 +42,5 @@ export default class App extends React.Component {
     )
   }
 }
+
+export default App
